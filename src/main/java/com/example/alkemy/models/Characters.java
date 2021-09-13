@@ -1,64 +1,96 @@
 package com.example.alkemy.models;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "personajes")
-public class Characters {
-	
-	private String imagen;
-	private String nombre;
-	private Integer edad;
-	private Float peso;
-	private String historia;
-	private String asoc_movie;
-	
-	
-	public String getImagen(String imagen) {
-		return imagen;
+@Table(name = "characters")
+public class Characters implements Serializable {
+
+    private static final long serialVersionUID = 1l;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String image;
+
+    private String name;
+
+    private Integer age;
+
+    private Integer weight;
+
+    private String history;
+
+    private String associated_movies;
+
+    public Long getId() {
+    	return id;
+    }
+    
+	public void setId(Long id) {
+		this.id = id;
 	}
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
+    
+	public String getImage() {
+		return image;
 	}
 
-	
-	public String getNombre(String nombre) {
-		return nombre;
+
+	public void setImage(String image) {
+		this.image = image;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+
+	public String getName() {
+		return name;
 	}
-	
-	
-	public Integer getEdad(Integer edad) {
-		return edad;
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setEmail(Integer edad) {
-		this.edad = edad;
+
+
+	public int getAge() {
+		return age;
 	}
-	
-	
-	public Float getPeso(Float peso) {
-		return peso;
+
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
-	public void setPeso(Float peso) {
-		this.peso = peso;
+
+
+	public int getWeight() {
+		return weight;
 	}
-	
-	
-	public String getHistoria(String historia) {
-		return historia;
+
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
 	}
-	public void setHistoria(String historia) {
-		this.historia = historia;
+
+
+	public String getAssociated_movies() {
+		return associated_movies;
 	}
-	
-	
-	public String getAsocMovie(String asoc_movie) {
-		return asoc_movie;
+
+
+	public void setAssociated_movies(String associated_movies) {
+		this.associated_movies = associated_movies;
 	}
-	public void setAsocMovie(String asoc_movie) {
-		this.asoc_movie = asoc_movie;
+
+
+	public String getHistory() {
+		return history;
 	}
-	
+
+
+	public void setHistory(String history) {
+		this.history = history;
+	}
+
 }
